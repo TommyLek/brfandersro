@@ -1,0 +1,106 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "/", label: "Hem" },
+    { href: "/om-projektet", label: "Om projektet" },
+    { href: "/lagenheter", label: "Lägenheterna" },
+    { href: "/intresse", label: "Intresseanmälan" },
+    { href: "/kontakt", label: "Kontakt" },
+  ];
+
+  return (
+    <header className="bg-primary/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-accent/20">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-2xl font-serif font-bold text-gold-gradient">
+              BRF Andersro
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-foreground/80 hover:text-accent transition-colors duration-200 text-sm uppercase tracking-wider"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button - Desktop */}
+          <div className="hidden md:block">
+            <Link href="/intresse" className="btn-primary text-sm">
+              Anmäl intresse
+            </Link>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden pb-4">
+            <div className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-foreground/80 hover:text-accent transition-colors duration-200 text-sm uppercase tracking-wider py-2"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/intresse"
+                onClick={() => setIsMenuOpen(false)}
+                className="btn-primary text-sm text-center mt-4"
+              >
+                Anmäl intresse
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}
