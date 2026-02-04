@@ -65,6 +65,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
+        backgroundImage="/images/Andersro_vy1.png"
         subtitle="Visby, Gotland"
         title="BRF Andersro"
         description="Upptäck ditt nya hem i hjärtat av Visby. 70 moderna lägenheter med genomtänkt design, parkeringsgarage och närhet till allt som gör Gotland unikt."
@@ -111,6 +112,15 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Image Break */}
+      <section className="relative h-[50vh] lg:h-[60vh] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url(/images/Andersro_vy4.png)" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-primary" />
       </section>
 
       {/* Stats Section */}
@@ -215,24 +225,18 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Map */}
+            {/* Image */}
             <div className="relative aspect-square lg:aspect-auto lg:h-[500px]">
               <div className="absolute inset-0 border border-accent/10 overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps?q=57.632306,18.293069&t=k&z=15&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="BRF Andersro - Läge i Visby"
-                  className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                <img
+                  src="/images/Andersro_vy3.png"
+                  alt="Innergård BRF Andersro med grönska och stenmur"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              {/* Coordinates overlay */}
+              {/* Location overlay */}
               <div className="absolute bottom-4 left-4 bg-primary/90 backdrop-blur-sm px-4 py-2 border border-accent/20">
-                <p className="text-foreground-muted font-mono text-xs">57.6323°N, 18.2931°E</p>
+                <p className="text-foreground-muted font-mono text-xs">Visby, Gotland</p>
               </div>
             </div>
           </div>

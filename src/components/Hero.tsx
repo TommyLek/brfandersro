@@ -13,6 +13,7 @@ interface HeroProps {
   secondaryText?: string;
   secondaryHref?: string;
   fullHeight?: boolean;
+  backgroundImage?: string;
 }
 
 export default function Hero({
@@ -25,6 +26,7 @@ export default function Hero({
   secondaryText = "Läs mer",
   secondaryHref = "/om-projektet",
   fullHeight = true,
+  backgroundImage,
 }: HeroProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -40,8 +42,19 @@ export default function Hero({
     >
       {/* Multi-layered background */}
       <div className="absolute inset-0">
+        {/* Background image */}
+        {backgroundImage && (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${backgroundImage})` }}
+            />
+            <div className="absolute inset-0 bg-primary/40 backdrop-blur-[2px]" />
+          </>
+        )}
+
         {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary via-background to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-background/90 to-background" />
 
         {/* Radial glow top center */}
         <div
