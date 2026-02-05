@@ -92,6 +92,15 @@ export default function OmProjektet() {
         </div>
       </section>
 
+      {/* Image Break - Architecture */}
+      <section className="relative h-[50vh] lg:h-[60vh] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url(/images/Andersro_vy7.png)" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-primary" />
+      </section>
+
       {/* Stats Section */}
       <section className="py-20 bg-primary relative">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
@@ -117,18 +126,16 @@ export default function OmProjektet() {
 
       {/* Location Section */}
       <section className="py-24 bg-background relative">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-4">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
               <p className="text-accent text-xs uppercase tracking-[0.4em] mb-4 font-medium">
                 Platsen
               </p>
-              <h2 className="font-serif font-normal text-3xl lg:text-4xl">
+              <h2 className="font-serif font-normal text-3xl lg:text-4xl mb-6">
                 <span className="text-gold-gradient">Läget</span>
               </h2>
-              <div className="w-12 h-px bg-accent/30 mt-6" />
-            </div>
-            <div className="lg:col-span-8">
+              <div className="w-12 h-px bg-accent/30 mb-8" />
               <p className="text-foreground-muted text-lg leading-relaxed mb-8">
                 Att bo i Visby innebär att ha allt inom räckhåll — från
                 innerstadens kaféer och restauranger till Gotlands vackra
@@ -142,6 +149,15 @@ export default function OmProjektet() {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[450px]">
+              <div className="absolute inset-0 border border-accent/10 overflow-hidden">
+                <img
+                  src="/images/Andersro_vy6.png"
+                  alt="Gångstråk med grönska vid BRF Andersro"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -200,6 +216,49 @@ export default function OmProjektet() {
                 installationer och genomtänkta lösningar ger låga driftskostnader
                 och minimal miljöpåverkan.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery */}
+      <section className="py-24 bg-primary relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <p className="text-accent text-xs uppercase tracking-[0.4em] mb-4 font-medium">
+              Miljöbilder
+            </p>
+            <h2 className="font-serif font-normal text-3xl lg:text-4xl">
+              <span className="text-gold-gradient">Området</span>
+            </h2>
+            <div className="flex justify-center mt-6">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="relative aspect-[4/3] overflow-hidden border border-accent/10">
+              <img
+                src="/images/Andersro_vy8.png"
+                alt="Fasad med trädgård BRF Andersro"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden border border-accent/10">
+              <img
+                src="/images/Andersro_vy9.png"
+                alt="Uteplatser och innergård BRF Andersro"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden border border-accent/10">
+              <img
+                src="/images/Andersro_vy10.png"
+                alt="Innergård med grönska BRF Andersro"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
             </div>
           </div>
         </div>
